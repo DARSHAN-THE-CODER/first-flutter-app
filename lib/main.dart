@@ -1,34 +1,73 @@
 import 'package:flutter/material.dart';
 
-void main() {
-  runApp(MaterialApp(
-      home: Scaffold(
-    appBar: AppBar(
-      title: Text(
-        'My First App',
-        style: TextStyle(
-          fontSize: 20.0,
+void main() => runApp(MaterialApp(
+      home: Home(),
+    ));
+
+// void main() {
+//   runApp(MaterialApp(
+//       home: Scaffold(
+//     appBar: AppBar(
+//       title: Text(
+//         'My First App',
+//         style: TextStyle(
+//           fontSize: 20.0,
+//         ),
+//       ),
+//       centerTitle: true,
+//       backgroundColor: Colors.green[600],
+//     ),
+//     body: Center(
+//         child: Text(
+//       "This is my first application",
+//       style: TextStyle(
+//         fontSize: 30.0,
+//         fontWeight: FontWeight.bold,
+//         letterSpacing: 2.0,
+//         color: Colors.grey[600],
+//       ),
+//     )),
+//     floatingActionButton: FloatingActionButton(
+//       child: Text("Click"),
+//       onPressed: () => print("You clicked me"),
+//       backgroundColor: Colors.green[600],
+//     ),
+//   )));
+// }
+
+class Home extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: Text(
+          'My First App',
+          style: TextStyle(
+            fontSize: 20.0,
+          ),
         ),
+        centerTitle: true,
+        backgroundColor: Colors.green[600],
       ),
-      centerTitle: true,
-      backgroundColor: Colors.green[600],
-    ),
-    body: Center(
-        child: Text(
-      "This is my first application",
-      style: TextStyle(
-        fontSize: 30.0,
-        fontWeight: FontWeight.bold,
-        letterSpacing: 2.0,
-        color: Colors.grey[600],
+      body: Row(
+        mainAxisAlignment: MainAxisAlignment.spaceAround,
+        crossAxisAlignment: CrossAxisAlignment.center,
+        children: [
+          Text("Hello, World!"),
+          TextButton(onPressed: () {}, child: Text("Click me")),
+          Container(
+            color: Colors.amber,
+            padding: EdgeInsets.all(20.0),
+            child: Text("Inside Container"),
+          )
+        ],
       ),
-    )),
-    floatingActionButton: FloatingActionButton(
-      child: Text("Click"),
-      onPressed: () => print("You clicked me"),
-      backgroundColor: Colors.green[600],
-    ),
-  )));
+      floatingActionButton: FloatingActionButton(
+        child: Icon(Icons.add),
+        onPressed: () {},
+      ),
+    );
+  }
 }
 
 // class MyApp extends StatelessWidget {
